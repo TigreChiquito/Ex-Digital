@@ -1,0 +1,21 @@
+#carrusel_description {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white !important;
+    padding: 20px 30px;
+    border-radius: 30px;;
+    backdrop-filter: blur(5px);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#carrusel_description h5 {
+    color: white !important;
+    font-size: 1.8rem;
+}
+
+#carrusel_description p {
+    color: white !important;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
