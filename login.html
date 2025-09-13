@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/indexStyle.css">
 </head>
 <body>
 <!-- Navbar -->
@@ -13,74 +14,81 @@
     <a class="navbar-brand">
       <img src="img/utilidades/sv_ex_logo_4c_vector-1.webp" width="50px">
     </a>
-    <div class="collapse navbar-collapse">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Menú izquierdo -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Productos</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
-        <li class="nav-item"><a class="nav-link" href="blog.html">Blogs</a></li>
-        <li class="nav-item"><a class="nav-link active" href="contacto.html">Contacto</a></li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="productos.html">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="nosotros.html">Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="blog.html">Blogs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contacto.html">Contacto</a>
+        </li>
+      </ul>
+
+      <!-- Menú derecho: login/registro -->
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="login.html">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="registro.html">Registro</a>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
-
-<!-- Formulario de Contacto -->
+<!--registro-->
 <div class="container mt-5">
-  <form id="formContacto">
-    <h2 class="text-center mb-4">Contáctanos</h2>
-
-    <div class="mb-3">
-      <label for="nombre" class="form-label">Nombre:</label>
-      <input type="text" class="form-control" id="nombre" required readonly>
-    </div>
-
-    <div class="mb-3">
-      <label for="correo" class="form-label">Correo:</label>
-      <input type="email" class="form-control" id="correo" required readonly>
-    </div>
-
-    <div class="mb-3">
-      <label for="mensaje" class="form-label">Mensaje:</label>
-      <textarea class="form-control" id="mensaje" rows="4" required></textarea>
-    </div>
-
-    <button type="submit" class="btn btn-dark w-100">Enviar</button>
-  </form>
+    <form id="login">
+        <h2 class="text-center mb-4">Iniciar Sesión</h2>
+        <div class="mb-3">
+            <label for="correo" class="form-label">Correo:</label>
+            <input type="email" class="form-control" id="correo" required>
+        </div>
+        <div class="mb-3">
+            <label for="contraseña" class="form-label">Contraseña:</label>
+            <input type="password" class="form-control" id="contraseña" required>
+        </div>
+        <button type="submit" class="btn btn-dark w-100">Ingresar</button>
+    </form>
 </div>
 
 <script>
-// Al cargar la página, rellenamos con datos de login guardados
-window.onload = function() {
-  let nombreGuardado = localStorage.getItem("nombre");
-  let correoGuardado = localStorage.getItem("correo");
+document.getElementById("login").addEventListener("submit", function(e) {
+    e.preventDefault();
 
-  if (nombreGuardado && correoGuardado) {
-    document.getElementById("nombre").value = nombreGuardado;
-    document.getElementById("correo").value = correoGuardado;
-  }
-};
+    let correoIngresado = document.getElementById("correo").value;
+    let contraseñaIngresada = document.getElementById("contraseña").value;
 
-// Manejo del formulario
-document.getElementById("formContacto").addEventListener("submit", function(e) {
-  e.preventDefault();
+    let correoGuardado = localStorage.getItem("correo");
+    let contraseñaGuardada = localStorage.getItem("contraseña");
 
-  let nombre = document.getElementById("nombre").value;
-  let correo = document.getElementById("correo").value;
-  let mensaje = document.getElementById("mensaje").value;
-
-  if (mensaje.trim() === "") {
-    alert("Por favor escribe un mensaje.");
-    return;
-  }
-
-  // Simulación de envío
-  alert("¡Gracias " + nombre + "! Tu mensaje ha sido enviado correctamente.");
-  document.getElementById("formContacto").reset();
-
-  // Vuelve a rellenar nombre y correo porque están en readonly
-  document.getElementById("nombre").value = nombre;
-  document.getElementById("correo").value = correo;
+    if (correoIngresado === correoGuardado && contraseñaIngresada === contraseñaGuardada) {
+        alert("Inicio de sesión exitoso!");
+        window.location.href = "index.html"; // redirige al home
+    } else {
+        alert("Correo o contraseña incorrectos");
+    }
 });
 </script>
 
