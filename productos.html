@@ -1,193 +1,106 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Productos</title>
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="style/indexStyle.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Nuestros Productos</h2>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4" id="productosContainer"></div>
+</div>
 
- <!-- Navbar -->
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand">
-      <img src="img/utilidades/sv_ex_logo_4c_vector-1.webp" width="50px">
-    </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <!-- Menú izquierdo -->
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="productos.html">Productos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="nosotros.html">Nosotros</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="blog.html">Blogs</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contacto.html">Contacto</a>
-        </li>
-      </ul>
-
-      <!-- Menú derecho: login/registro -->
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="login.html">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="registro.html">Registro</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-  <!-- Título -->
-  <div class="container mt-5">
-    <h2 class="text-center mb-4">PRODUCTOS</h2>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-      <!-- Tarjetas de productos -->
-      <div class="col">
-        <div class="card h-100 shadow-sm">
-          <img src="img/productos/producto1.jpg" class="card-img-top" alt="Producto 1">
-          <div class="card-body text-center">
-            <h5 class="card-title">Título del Producto 1</h5>
-            <p class="card-text fw-bold text-success">$9.990</p>
-            <button class="btn btn-dark">Agregar al carrito</button>
-          </div>
-        </div>
+<!-- Modal -->
+<div class="modal fade" id="detalleModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalNombre">Producto</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
-      <div class="col">
-        <div class="card h-100 shadow-sm">
-          <img src="img/productos/producto2.jpg" class="card-img-top" alt="Producto 2">
-          <div class="card-body text-center">
-            <h5 class="card-title">Título del Producto 2</h5>
-            <p class="card-text fw-bold text-success">$9.990</p>
-            <button class="btn btn-dark">Agregar al carrito</button>
-          </div>
-        </div>
+      <div class="modal-body text-center">
+        <img id="modalImg" src="" class="img-fluid mb-3" style="max-height:300px;">
+        <p id="modalDescripcion" class="mb-2"></p>
+        <p id="modalPrecio" class="fw-bold"></p>
+        <label for="modalCantidad" class="form-label">Cantidad:</label>
+        <input type="number" id="modalCantidad" class="form-control" min="1" value="1">
       </div>
-      <div class="col">
-        <div class="card h-100 shadow-sm">
-          <img src="img/productos/producto3.jpg" class="card-img-top" alt="Producto 3">
-          <div class="card-body text-center">
-            <h5 class="card-title">Título del Producto 3</h5>
-            <p class="card-text fw-bold text-success">$9.990</p>
-            <button class="btn btn-dark">Agregar al carrito</button>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 shadow-sm">
-          <img src="img/productos/producto4.jpg" class="card-img-top" alt="Producto 4">
-          <div class="card-body text-center">
-            <h5 class="card-title">Título del Producto 4</h5>
-            <p class="card-text fw-bold text-success">$9.990</p>
-            <button class="btn btn-dark">Agregar al carrito</button>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 shadow-sm">
-          <img src="img/productos/producto5.jpg" class="card-img-top" alt="Producto 5">
-          <div class="card-body text-center">
-            <h5 class="card-title">Título del Producto 5</h5>
-            <p class="card-text fw-bold text-success">$9.990</p>
-            <button class="btn btn-dark">Agregar al carrito</button>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 shadow-sm">
-          <img src="img/productos/producto6.jpg" class="card-img-top" alt="Producto 6">
-          <div class="card-body text-center">
-            <h5 class="card-title">Título del Producto 6</h5>
-            <p class="card-text fw-bold text-success">$9.990</p>
-            <button class="btn btn-dark">Agregar al carrito</button>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 shadow-sm">
-          <img src="img/productos/producto7.jpg" class="card-img-top" alt="Producto 7">
-          <div class="card-body text-center">
-            <h5 class="card-title">Título del Producto 7</h5>
-            <p class="card-text fw-bold text-success">$9.990</p>
-            <button class="btn btn-dark">Agregar al carrito</button>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 shadow-sm">
-          <img src="img/productos/producto8.jpg" class="card-img-top" alt="Producto 8">
-          <div class="card-body text-center">
-            <h5 class="card-title">Título del Producto 8</h5>
-            <p class="card-text fw-bold text-success">$9.990</p>
-            <button class="btn btn-dark">Agregar al carrito</button>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 shadow-sm">
-          <img src="img/productos/producto9.jpg" class="card-img-top" alt="Producto 9">
-          <div class="card-body text-center">
-            <h5 class="card-title">Título del Producto 9</h5>
-            <p class="card-text fw-bold text-success">$9.990</p>
-            <button class="btn btn-dark">Agregar al carrito</button>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 shadow-sm">
-          <img src="img/productos/producto10.jpg" class="card-img-top" alt="Producto 10">
-          <div class="card-body text-center">
-            <h5 class="card-title">Título del Producto 10</h5>
-            <p class="card-text fw-bold text-success">$9.990</p>
-            <button class="btn btn-dark">Agregar al carrito</button>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 shadow-sm">
-          <img src="img/productos/producto11.jpg" class="card-img-top" alt="Producto 11">
-          <div class="card-body text-center">
-            <h5 class="card-title">Título del Producto 11</h5>
-            <p class="card-text fw-bold text-success">$9.990</p>
-            <button class="btn btn-dark">Agregar al carrito</button>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 shadow-sm">
-          <img src="img/productos/producto12.jpg" class="card-img-top" alt="Producto 12">
-          <div class="card-body text-center">
-            <h5 class="card-title">Título del Producto 12</h5>
-            <p class="card-text fw-bold text-success">$9.990</p>
-            <button class="btn btn-dark">Agregar al carrito</button>
-          </div>
-        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" id="confirmarAgregar">Agregar al carrito</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
       </div>
     </div>
   </div>
+</div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const productos = [
+  {nombre: "Producto 1", precio: 10000, img: "img/utilidades/sv_ex_logo_4c_vector-1.webp", descripcion: "Descripción detallada del Producto 1."},
+  {nombre: "Producto 2", precio: 15000, img: "img/productos/K65_PLUS_WIRELESS_01.avif", descripcion: "Descripción detallada del Producto 2."},
+  {nombre: "Producto 3", precio: 12500, img: "img/productos/producto3.jpg", descripcion: "Descripción detallada del Producto 3."},
+  {nombre: "Producto 4", precio: 18000, img: "img/productos/producto4.jpg", descripcion: "Descripción detallada del Producto 4."},
+  {nombre: "Producto 5", precio: 9500, img: "img/productos/producto5.jpg", descripcion: "Descripción detallada del Producto 5."},
+  {nombre: "Producto 6", precio: 20000, img: "img/productos/producto6.jpg", descripcion: "Descripción detallada del Producto 6."},
+  {nombre: "Producto 7", precio: 14000, img: "img/productos/producto7.jpg", descripcion: "Descripción detallada del Producto 7."},
+  {nombre: "Producto 8", precio: 11500, img: "img/productos/producto8.jpg", descripcion: "Descripción detallada del Producto 8."}
+];
+
+const container = document.getElementById("productosContainer");
+const modal = new bootstrap.Modal(document.getElementById('detalleModal'));
+let productoSeleccionado = {};
+
+// Generar cards de productos
+productos.forEach((prod, index) => {
+  const col = document.createElement("div");
+  col.className = "col";
+  col.innerHTML = `
+    <div class="card h-100">
+      <img src="${prod.img}" class="card-img-top" alt="${prod.nombre}">
+      <div class="card-body text-center">
+        <h5 class="card-title">${prod.nombre}</h5>
+        <p class="card-text">$${prod.precio.toLocaleString()}</p>
+        <button class="btn btn-dark agregar" data-index="${index}">Agregar al carrito</button>
+      </div>
+    </div>
+  `;
+  container.appendChild(col);
+});
+
+// Manejo del modal
+document.addEventListener("click", (e) => {
+  if(e.target.classList.contains("agregar")){
+    const index = e.target.dataset.index;
+    productoSeleccionado = productos[index];
+
+    document.getElementById("modalNombre").textContent = productoSeleccionado.nombre;
+    document.getElementById("modalImg").src = productoSeleccionado.img;
+    document.getElementById("modalDescripcion").textContent = productoSeleccionado.descripcion;
+    document.getElementById("modalPrecio").textContent = `$${productoSeleccionado.precio.toLocaleString()}`;
+    document.getElementById("modalCantidad").value = 1;
+
+    modal.show();
+  }
+});
+
+// Confirmar agregar al carrito
+document.getElementById("confirmarAgregar").addEventListener("click", () => {
+  const cantidad = parseInt(document.getElementById("modalCantidad").value);
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+  const index = carrito.findIndex(item => item.nombre === productoSeleccionado.nombre);
+  if(index !== -1){
+    carrito[index].cantidad += cantidad;
+  } else {
+    carrito.push({...productoSeleccionado, cantidad});
+  }
+
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  modal.hide();
+  alert(`${productoSeleccionado.nombre} agregado al carrito`);
+});
+</script>
 </body>
 </html>

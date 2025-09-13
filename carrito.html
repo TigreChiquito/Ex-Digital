@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito de Compras</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/utilidades/sv_ex_logo_4c_vector-1.webp" width="50px">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link active" href="carrito.html">Carrito</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenido -->
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">Carrito de Compras</h2>
+
+    <div id="carrito-contenido" class="table-responsive">
+      <table class="table table-bordered align-middle text-center">
+        <thead class="table-dark">
+          <tr>
+            <th>Producto</th>
+            <th>Imagen</th>
+            <th>Precio Unitario</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="carrito-body">
+          <!-- Aquí se cargan los productos -->
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-end">
+      <h4 id="total" class="fw-bold">Total: $0</h4>
+      <button class="btn btn-success mt-3">Finalizar Compra</button>
+    </div>
+  </div>
+
+  <script>
+    // Obtener carrito del localStorage
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    function renderCarrito() {
+      const carritoBody = document.getElementById("carrito-body");
+      carritoBody.innerHTML = "";
+
+      let total = 0;
+
+      carrito.forEach((item, index) => {
+        let subtotal = item.precio * item.cantidad;
+        total += subtotal;
+
+        let fila = `
+          <tr>
+            <td>${item.nombre}</td>
+            <td><img src="${item.img}" width="70" class="rounded shadow"></td>
+            <td>$${item.precio.toLocaleString()}</td>
+            <td>
+              <input type="number" min="1" value="${item.cantidad}" class="form-control cantidad-input" data-index="${index}">
+            </td>
+            <td>$${subtotal.toLocaleString()}</td>
+            <td>
+              <button class="btn btn-danger btn-sm eliminar" data-index="${index}">Eliminar</button>
+            </td>
+          </tr>
+        `;
+        carritoBody.innerHTML += fila;
+      });
+
+      document.getElementById("total").textContent = `Total: $${total.toLocaleString()}`;
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+    }
+
+    // Eliminar producto
+    document.addEventListener("click", function(e) {
+      if (e.target.classList.contains("eliminar")) {
+        let index = e.target.dataset.index;
+        carrito.splice(index, 1);
+        renderCarrito();
+      }
+    });
+
+    // Cambiar cantidad
+    document.addEventListener("input", function(e) {
+      if (e.target.classList.contains("cantidad-input")) {
+        let index = e.target.dataset.index;
+        carrito[index].cantidad = parseInt(e.target.value);
+        renderCarrito();
+      }
+    });
+
+    renderCarrito();
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
