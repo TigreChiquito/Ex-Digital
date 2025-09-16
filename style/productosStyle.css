@@ -30,3 +30,18 @@ body {
     color: #3498db !important;
     border-bottom: 2px solid #3498db;
 }
+
+#cart-counter {
+    font-size: 0.7rem;
+    min-width: 18px;
+    height: 18px;
+    line-height: 18px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cart-counter[data-count="0"] {
+    display: none;
+}
