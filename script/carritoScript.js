@@ -38,6 +38,7 @@
         let index = e.target.dataset.index;
         carrito.splice(index, 1);
         renderCarrito();
+        updateCartCounter();
     }
     });
 

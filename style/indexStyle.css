@@ -53,6 +53,14 @@ body {
     margin-bottom: 0;
 }
 
+#carouselExampleAutoplaying{
+    width: auto;
+    display: flex;
+    margin-left: 30px;
+    margin-right: 30px;
+    max-height: 800px;
+}
+
 #cart-counter {
     font-size: 0.7rem;
     min-width: 18px;
@@ -66,4 +74,15 @@ body {
 
 #cart-counter[data-count="0"] {
     display: none;
+}
+
+#xd h2{
+    text-align: center;
+    margin:auto ;
+    margin-bottom: 50px;
+    padding: 40px 0;
+    background: white;
+    border-radius: 8px;
+    max-width: 500px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }

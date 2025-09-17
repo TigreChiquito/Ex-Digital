@@ -45,3 +45,13 @@ body {
 #cart-counter[data-count="0"] {
     display: none;
 }
+#xd h2{
+    text-align: center;
+    margin:auto ;
+    margin-bottom: 50px;
+    padding: 40px 0;
+    background: white;
+    border-radius: 8px;
+    max-width: 500px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}

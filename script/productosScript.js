@@ -1,5 +1,6 @@
+    // Cambiar orden de productos para que quede estetico y agregar imagenes 2 y 3
     const productos = [
-    {nombre: "Cascos", precio: 10000, img: "img/productos/CA-9011379-WW_01.avif", descripcion: "Descripción detallada del Producto 1."},
+    {nombre: "Cascos", precio: 10000, img: "img/productos/CA-9011379-WW_01.avif", img2: "img/productos/g213-gallery-1-nb.webp",descripcion: "Descripción detallada del Producto 1."},
     {nombre: "Teclado", precio: 15000, img: "img/productos/g213-gallery-1-nb.webp", descripcion: "Descripción detallada del Producto 2."},
     {nombre: "Teclado", precio: 12500, img: "img/productos/g513-carbon-gallery-2.webp", descripcion: "Descripción detallada del Producto 3."},
     {nombre: "Teclado", precio: 18000, img: "img/productos/g915-x-wireless-mechanical-gaming-keyboard-gallery-1-us.webp", descripcion: "Descripción detallada del Producto 4."},
@@ -38,6 +39,7 @@
 
     document.getElementById("modalNombre").textContent = productoSeleccionado.nombre;
     document.getElementById("modalImg").src = productoSeleccionado.img;
+    document.getElementById("modalImg2").src = productoSeleccionado.img2;
     document.getElementById("modalDescripcion").textContent = productoSeleccionado.descripcion;
     document.getElementById("modalPrecio").textContent = `$${productoSeleccionado.precio.toLocaleString()}`;
     document.getElementById("modalCantidad").value = 1;

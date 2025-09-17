@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<!-- Navbar -->
+<!-- Navbar --> <!-- cambiar carrito de lado?-->
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
 <div class="container-fluid">
     <a class="navbar-brand">
@@ -66,7 +66,7 @@
 </div>
 </nav>
 
-<!-- Carrusel de imagenes --> 
+<!-- Carrusel de imagenes --> <!-- Corregir tamaño carrusel-->
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
 
@@ -109,10 +109,10 @@
     </button>
     </div>
 
-<!-- Productos destacados --> <!-- Vincular productos a carrito -->
+<!-- Productos destacados --> <!-- Vincular productos a carrito o a script--> <!--
     <div class="container my-5">
         <div class="row g-4">
-            <!-- Producto 1 -->
+            
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
                 <div class="card product-card h-100">
                     <img src="img\productos\SCIMITAR_ELITE_SE_BLK-YLO_01.avif" class="card-img-top" alt="Katar Pro XT">
@@ -125,7 +125,6 @@
                 </div>
             </div>
 
-            <!-- Producto 2 -->
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
                 <div class="card product-card h-100">
                     <img src="img\productos\M75_AIR_LIGHT_GRAY_01.avif" class="card-img-top" alt="Product">
@@ -138,7 +137,6 @@
                 </div>
             </div>
 
-            <!-- Producto 3 -->
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
                 <div class="card product-card h-100">
                     <img src="img\productos\VIRTUOSO_MAX_WIRELESS_CRBN_01.avif" class="card-img-top" alt="Product">
@@ -151,7 +149,6 @@
                 </div>
             </div>
 
-            <!-- Producto 4 -->
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
                 <div class="card product-card h-100">
                     <img src="img\productos\CA-9011379-WW_01.avif" class="card-img-top" alt="Product">
@@ -164,7 +161,6 @@
                 </div>
             </div>
 
-            <!-- Producto 5 -->
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
                 <div class="card product-card h-100">
                     <img src="img\productos\g513-carbon-gallery-2.webp" class="card-img-top" alt="Product">
@@ -177,7 +173,6 @@
                 </div>
             </div>
 
-            <!-- Producto 6 -->
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
                 <div class="card product-card h-100">
                     <img src="img\productos\pro-x-tkl-rapid-black-gallery-1-us.webp" class="card-img-top" alt="Product">
@@ -190,7 +185,6 @@
                 </div>
             </div>
 
-            <!-- Producto 7 -->
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
                 <div class="card product-card h-100">
                     <img src="img\productos\g915-x-wireless-mechanical-gaming-keyboard-gallery-1-us.webp" class="card-img-top" alt="Product">
@@ -203,7 +197,6 @@
                 </div>
             </div>
 
-            <!-- Producto 8 -->
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
                 <div class="card product-card h-100">
                     <img src="img\productos\g213-gallery-1-nb.webp" class="card-img-top" alt="Product">
@@ -217,6 +210,54 @@
             </div>
         </div>
     </div>
+-->
+
+<!-- Cards -->
+<div id="xd" class="container mt-5">
+    <h2 class="text-center mb-4">Nuestros Productos</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4" id="productosContainer"></div>
+</div>
+
+<!-- Modal --> <!-- Agregar imagenes a los carruceles de la card -->
+<div class="modal fade" id="detalleModal" tabindex="-1" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title" id="modalNombre">Producto</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+    </div>
+    <div class="modal-body text-center">
+        <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+            <img id="modalImg" src="" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+            <img id="modalImg2" src="" class="d-block w-100" alt="...">
+            </div>
+        </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+    </div>
+
+        <p id="modalDescripcion" class="mb-2"></p>
+        <p id="modalPrecio" class="fw-bold"></p>
+        <label for="modalCantidad" class="form-label">Cantidad:</label>
+        <input type="number" id="modalCantidad" class="form-control" min="1" value="1">
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-success" id="confirmarAgregar">Agregar al carrito</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+    </div>
+    </div>
+</div>
+</div>
 
 <!-- Footer Empresa --> 
     <footer id="empresa" class="bg-light text-dark py-4 mt-5 border-top">
@@ -238,5 +279,6 @@
 <!-- zona de scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="script/sesionScript.js"></script>
+    <script src="script/productosScript.js"></script>
 </body>
 </html>
