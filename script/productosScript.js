@@ -1,7 +1,7 @@
 99    // Cambiar orden de productos para que quede estetico y agregar imagenes 2 y 3
     const productos = [
-    {nombre: "CA-9011379", precio: 10000, img: "img/productos/CA-9011379-WW_01.avif", img2: "img/productos/g213-gallery-1-nb.webp",descripcion: "Auriculares gaming de alta calidad con micrófono integrado y sonido envolvente. Perfectos para largas sesiones de juego.."},
-    {nombre: "G213", precio: 15000, img: "img/productos/g213-gallery-1-nb.webp", descripcion: "Teclado gamer retroiluminado con teclas resistentes y rápidas. Ideal para mejorar tu rendimiento en cada partida."},
+    {nombre: "CA-9011379", precio: 10000, img: "img/productos/CA-9011379-WW_01.avif", img2: "img/productos/CA-9011379-WW_13.avif", img3: "img/productos/s-l400.jpg", descripcion: "Auriculares gaming de alta calidad con micrófono integrado y sonido envolvente. Perfectos para largas sesiones de juego.."},
+    {nombre: "G213", precio: 15000, img: "img/productos/g213-gallery-1-nb.webp",img2: "img/productos/marcaslogitech29logkg213-negro1jpeg_0.webp", img3: "img/productos/g213prodigygamingkeyboard20(2).webp", descripcion: "Teclado gamer retroiluminado con teclas resistentes y rápidas. Ideal para mejorar tu rendimiento en cada partida."},
     {nombre: "G513", precio: 12500, img: "img/productos/g513-carbon-gallery-2.webp", descripcion: "Teclado mecánico premium con switches de alta precisión y reposamuñecas ergonómico. Rendimiento y comodidad en uno."},
     {nombre: "G915", precio: 18000, img: "img/productos/g915-x-wireless-mechanical-gaming-keyboard-gallery-1-us.webp", descripcion: "Teclado inalámbrico de perfil bajo con iluminación RGB y batería de larga duración. Estilo y rendimiento profesional."},
     {nombre: "K65", precio: 9500, img: "img/productos/K65_PLUS_WIRELESS_01.avif", descripcion: "Teclado compacto mecánico con retroiluminación brillante. Portátil y perfecto para gamers que necesitan movilidad."},
