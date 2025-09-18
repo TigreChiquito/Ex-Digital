@@ -1,91 +1,94 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="style\blogStyle.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/blog.css">
+    <link rel="stylesheet" href="styles/sesiones.css">
 </head>
+
 <body>
 
-  <!-- Navbar -->
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-<div class="container-fluid">
-    <a class="navbar-brand">
-    <img src="img/utilidades/1da7323a-a0f4-4f5c-90a1-5844b22203c5.png" width="50px">
-    </a>
-    <button
-    class="navbar-toggler"
-    type="button"
-    data-bs-toggle="collapse"
-    data-bs-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent"
-    aria-expanded="false"
-    aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <!-- Menú izquierdo -->
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-        <a class="nav-link"  href="index.html">Inicio</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="productos.html">Productos</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="nosotros.html">Nosotros</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="blog.html">Blogs</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="contacto.html">Contacto</a>
-        </li>
-        <li class="nav-item position-relative">
-            <a class="nav-link" href="carrito.html">
-                <i class="bi bi-cart3"></i>
-                <span id="cart-counter" class="badge bg-danger position-absolute top-0 start-100 translate-middle rounded-pill">0</span>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand">
+                <img src="img/utilidades/1da7323a-a0f4-4f5c-90a1-5844b22203c5.png" width="50px">
             </a>
-        </li>
-    </ul>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <!-- Menú derecho: login/registro -->
-    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-        <a class="nav-link" href="login.html">Login</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="registro.html">Registro</a>
-        </li>
-    </ul>
-    </div>
-</div>
-</nav>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Menú izquierdo -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="blog.html">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item position-relative">
+                        <a class="nav-link" href="carrito.html">
+                            <i class="bi bi-cart3"></i>
+                            <span id="cart-counter"
+                                class="badge bg-danger position-absolute top-0 start-100 translate-middle rounded-pill">0</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Menú derecho: login/registro -->
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registro.html">Registro</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <div class="container">
         <!-- Titulo -->
-    <header class="header">
-        <div id="title_blog">
-            <h1> Novedades Principales</h1>
-        </div>
-    </header>
+        <header class="header">
+            <div id="title_blog">
+                <h1> Novedades Principales</h1>
+            </div>
+        </header>
     </div>
 
 
-<!-- Primera entrada de blog -->
-<div class="case-container">
+    <!-- Primera entrada de blog -->
+    <div class="case-container">
         <div class="case-content">
             <h2 class="case-title">Se Acercan Las Rebajas De Verano</h2>
             <p class="case-description">
                 ¡El verano ya está a la vuelta de la esquina y con él llegan las mejores ofertas!
-                Prepárate para disfrutar de descuentos imperdibles en productos seleccionados que harán de tu temporada veraniega una experiencia única.
+                Prepárate para disfrutar de descuentos imperdibles en productos seleccionados que harán de tu temporada
+                veraniega una experiencia única.
                 Muy pronto podrás aprovechar promociones exclusivas en nuestra tienda online.
             </p>
-            <!-- <button class="case-button" href="#">Mas informacion</button> --> <!-- Boton deshabilitado por el momento -->
+            <!-- <button class="case-button" href="#">Mas informacion</button> -->
+            <!-- Boton deshabilitado por el momento -->
         </div>
         <div class="case-image">
             <img src="img\blog\20210820013113.jpg" alt="case1">
@@ -97,11 +100,14 @@
         <div class="case-content">
             <h2 class="case-title">Se Acercan Teclados Mecanicos Custom</h2>
             <p class="case-description">
-                Como parte de nuestra misión de ofrecerte lo mejor en tecnología y personalización, nos complace anunciar la llegada de nuestros nuevos teclados mecánicos custom.
-                Estos teclados están diseñados para brindarte una experiencia de escritura y juego inigualable, con la posibilidad de personalizar cada aspecto según tus preferencias.
+                Como parte de nuestra misión de ofrecerte lo mejor en tecnología y personalización, nos complace
+                anunciar la llegada de nuestros nuevos teclados mecánicos custom.
+                Estos teclados están diseñados para brindarte una experiencia de escritura y juego inigualable, con la
+                posibilidad de personalizar cada aspecto según tus preferencias.
                 Desde la elección de los interruptores hasta la iluminación RGB.
             </p>
-            <!-- <button class="case-button" href="#">Mas informacion</button> --> <!-- Boton deshabilitado por el momento -->
+            <!-- <button class="case-button" href="#">Mas informacion</button> -->
+            <!-- Boton deshabilitado por el momento -->
         </div>
         <div class="case-image">
             <img src="img\blog\1366_2000.jpg" alt="case2">
@@ -109,16 +115,19 @@
     </div>
 
 
-<!-- Footer Empresa -->
+    <!-- Footer Empresa -->
     <footer id="empresa" class="bg-light text-dark py-4 mt-5 border-top">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-2 text-center mb-3 mb-md-0">
-                    <img src="img\utilidades\1da7323a-a0f4-4f5c-90a1-5844b22203c5.png" class="img-fluid rounded-circle shadow" alt="Logo Empresa">
+                    <img src="img\utilidades\1da7323a-a0f4-4f5c-90a1-5844b22203c5.png"
+                        class="img-fluid rounded-circle shadow" alt="Logo Empresa">
                 </div>
                 <div class="col-md-8 text-center text-md-start">
                     <h5 class="mb-1">Sobre la Empresa</h5>
-                    <p class="mb-1">Especialistas dedicados a la venta de periféricos para todo tipo de jugador.<br><em>Tu experiencia de juego es nuestra prioridad, incluso aunque juegues en teléfonos.</em></p>
+                    <p class="mb-1">Especialistas dedicados a la venta de periféricos para todo tipo de
+                        jugador.<br><em>Tu experiencia de juego es nuestra prioridad, incluso aunque juegues en
+                            teléfonos.</em></p>
                 </div>
                 <div class="col-md-2 text-center text-md-end">
                     <p class="mb-0"><strong>Contacto:</strong><br> contacto@ExDigital.cl</p>
@@ -127,8 +136,11 @@
         </div>
     </footer>
 
-<!-- zona de scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <!-- zona de scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
     <script src="script/sesionScript.js"></script>
-  </body>
+</body>
+
 </html>

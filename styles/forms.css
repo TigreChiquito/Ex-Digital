@@ -1,0 +1,312 @@
+/* ============================================
+   FORMULARIOS - ESTILOS ESPECÍFICOS
+   Requiere: base.css
+   ============================================ */
+
+/* ============================================
+   CONTENEDORES DE FORMULARIOS
+   ============================================ */
+
+#container-registro, 
+#container-login, 
+#container-contacto {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing-xxl) var(--spacing-lg);
+    background: white;
+    margin-bottom: var(--spacing-xl);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+}
+
+/* ============================================
+   TÍTULOS DE FORMULARIOS
+   ============================================ */
+
+#container-registro h2,
+#container-login h2,
+#container-contacto h2 {
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-lg);
+    border-bottom: 3px solid #4da1da;
+    padding-bottom: var(--spacing-sm);
+    text-align: center;
+    position: relative;
+}
+
+#container-registro h2::after,
+#container-login h2::after,
+#container-contacto h2::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--bg-gradient-primary);
+    border-radius: var(--spacing-xs);
+}
+
+/* ============================================
+   CAMPOS DE FORMULARIO ESPECÍFICOS
+   ============================================ */
+
+#container-registro input, 
+#container-login input, 
+#container-contacto input, 
+#container-contacto textarea {
+    border: 1px solid #8d8787;
+    border-radius: 4px;
+    padding: var(--spacing-sm);
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: var(--spacing-md);
+    transition: all var(--transition-normal);
+    font-size: 1rem;
+    background: white;
+}
+
+#container-registro input:focus, 
+#container-login input:focus, 
+#container-contacto input:focus, 
+#container-contacto textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.25);
+    outline: none;
+    transform: translateY(-1px);
+}
+
+#container-contacto textarea {
+    min-height: 120px;
+    resize: vertical;
+    font-family: inherit;
+    line-height: 1.5;
+}
+
+/* ============================================
+   LABELS MEJORADOS
+   ============================================ */
+
+#container-registro .form-label,
+#container-login .form-label,
+#container-contacto .form-label {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    text-align: left;
+    display: block;
+    transition: color var(--transition-normal);
+}
+
+/* ============================================
+   BOTONES DE FORMULARIO
+   ============================================ */
+
+#container-registro .btn,
+#container-login .btn,
+#container-contacto .btn {
+    width: 100%;
+    padding: 12px var(--spacing-lg);
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+#container-registro .btn-dark,
+#container-login .btn-dark,
+#container-contacto .btn-dark {
+    background: var(--bg-gradient-button);
+    color: white;
+    box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3);
+}
+
+#container-registro .btn-dark:hover,
+#container-login .btn-dark:hover,
+#container-contacto .btn-dark:hover {
+    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(44, 62, 80, 0.4);
+}
+
+/* ============================================
+   VALIDACIÓN VISUAL
+   ============================================ */
+
+.form-control.is-valid {
+    border-color: var(--success-color);
+    box-shadow: 0 0 0 2px rgba(39, 174, 96, 0.25);
+}
+
+.form-control.is-invalid {
+    border-color: var(--danger-color);
+    box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.25);
+}
+
+.valid-feedback {
+    color: var(--success-color);
+    font-size: 0.875rem;
+    margin-top: var(--spacing-xs);
+    display: block;
+}
+
+.invalid-feedback {
+    color: var(--danger-color);
+    font-size: 0.875rem;
+    margin-top: var(--spacing-xs);
+    display: block;
+}
+
+/* ============================================
+   GRUPOS DE CAMPOS
+   ============================================ */
+
+.form-group {
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+}
+
+.form-group .form-control:focus + .form-label {
+    color: var(--primary-color);
+}
+
+/* ============================================
+   CAMPOS CON ICONOS
+   ============================================ */
+
+.input-group {
+    position: relative;
+    margin-bottom: var(--spacing-md);
+}
+
+.input-group i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    z-index: 2;
+}
+
+.input-group input {
+    padding-left: 45px;
+}
+
+.input-group input:focus + i {
+    color: var(--primary-color);
+}
+
+/* ============================================
+   RESPONSIVE ESPECÍFICO
+   ============================================ */
+
+@media (max-width: 768px) {
+    #container-registro,
+    #container-login,
+    #container-contacto {
+        padding: var(--spacing-xl) var(--spacing-lg);
+        margin: var(--spacing-lg) var(--spacing-sm);
+    }
+    
+    #container-registro h2,
+    #container-login h2,
+    #container-contacto h2 {
+        font-size: 1.6rem;
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    #container-registro input,
+    #container-login input,
+    #container-contacto input,
+    #container-contacto textarea {
+        padding: 12px var(--spacing-md);
+        font-size: 0.95rem;
+    }
+    
+    #container-contacto textarea {
+        min-height: 100px;
+    }
+}
+
+@media (max-width: 576px) {
+    #container-registro,
+    #container-login,
+    #container-contacto {
+        padding: var(--spacing-lg) var(--spacing-md);
+        margin: var(--spacing-lg) var(--spacing-xs);
+    }
+    
+    #container-registro h2,
+    #container-login h2,
+    #container-contacto h2 {
+        font-size: 1.4rem;
+    }
+    
+    #container-registro input,
+    #container-login input,
+    #container-contacto input,
+    #container-contacto textarea {
+        padding: var(--spacing-sm);
+        font-size: 0.9rem;
+    }
+    
+    #container-registro .btn,
+    #container-login .btn,
+    #container-contacto .btn {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 0.95rem;
+    }
+}
+
+/* ============================================
+   ANIMACIONES ESPECÍFICAS
+   ============================================ */
+
+#container-registro,
+#container-login,
+#container-contacto {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.form-control {
+    transition: all var(--transition-normal);
+}
+
+.form-control:hover {
+    border-color: #a0a0a0;
+}
+
+/* ============================================
+   ESTADOS DE CARGA
+   ============================================ */
+
+.btn.loading {
+    position: relative;
+    color: transparent;
+}
+
+.btn.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid transparent;
+    border-top: 2px solid white;
+    border-radius: var(--radius-circle);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

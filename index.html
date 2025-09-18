@@ -1,115 +1,120 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="style/indexStyle.css">
+
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/sesiones.css">
 </head>
+
 <body>
 
-<!-- Navbar --> <!-- cambiar carrito de lado?-->
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-<div class="container-fluid">
-    <a class="navbar-brand">
-    <img src="img/utilidades/1da7323a-a0f4-4f5c-90a1-5844b22203c5.png" width="50px">
-    </a>
-    <button
-    class="navbar-toggler"
-    type="button"
-    data-bs-toggle="collapse"
-    data-bs-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent"
-    aria-expanded="false"
-    aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <!-- Menú izquierdo -->
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="productos.html">Productos</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="nosotros.html">Nosotros</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="blog.html">Blogs</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="contacto.html">Contacto</a>
-        </li>
-        <li class="nav-item position-relative">
-            <a class="nav-link" href="carrito.html">
-                <i class="bi bi-cart3"></i>
-                <span id="cart-counter" class="badge bg-danger position-absolute top-0 start-100 translate-middle rounded-pill">0</span>
+    <!-- Navbar --> <!-- cambiar carrito de lado?-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand">
+                <img src="img/utilidades/1da7323a-a0f4-4f5c-90a1-5844b22203c5.png" width="50px">
             </a>
-        </li>
-    </ul>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <!-- Menú derecho: login/registro -->
-    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-        <a class="nav-link" href="login.html">Login</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="registro.html">Registro</a>
-        </li>
-    </ul>
-    </div>
-</div>
-</nav>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Menú izquierdo -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item position-relative">
+                        <a class="nav-link" href="carrito.html">
+                            <i class="bi bi-cart3"></i>
+                            <span id="cart-counter"
+                                class="badge bg-danger position-absolute top-0 start-100 translate-middle rounded-pill">0</span>
+                        </a>
+                    </li>
+                </ul>
 
-<!-- Carrusel de imagenes --> <!-- Corregir tamaño carrusel-->
+                <!-- Menú derecho: login/registro -->
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registro.html">Registro</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carrusel de imagenes --> <!-- Corregir tamaño carrusel-->
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
+        <div class="carousel-inner">
 
-        <!-- Imagen n°1 -->
-        <div class="carousel-item active">
-        <img src="img\carrucel\Scimitar-VSD_Image1-1200x675.webp" class="d-block w-100">
-            <div id="carrusel_description" class="carousel-caption d-none d-md-block">
-                <h5>Descubre Lo Nuevo de Corsair</h5>
-                <p>Nuevos productos para llevar tu equipo al siguiente nivel.</p>
+            <!-- Imagen n°1 -->
+            <div class="carousel-item active">
+                <img src="img\carrucel\Scimitar-VSD_Image1-1200x675.webp" class="d-block w-100">
+                <div id="carrusel_description" class="carousel-caption d-none d-md-block">
+                    <h5>Descubre Lo Nuevo de Corsair</h5>
+                    <p>Nuevos productos para llevar tu equipo al siguiente nivel.</p>
+                </div>
+            </div>
+
+            <!-- Imagen n°2 -->
+            <div class="carousel-item">
+                <img src="img/carrucel/VENGEANCE_7000_AIR_SERIES_PR_01.png" class="d-block w-100">
+                <div id="carrusel_description" class="carousel-caption d-none d-md-block">
+                    <h5>Ideales para acompañar tu estilo de juego.</h5>
+                    <p>Rendimiento y estilo en cada partida.</p>
+                </div>
+            </div>
+
+            <!-- Imagen n°3 -->
+            <div class="carousel-item">
+                <img src="img/carrucel/RED1_Launch_hero1_dt_2000x1125_v2-1200x675.webp" class="d-block w-100">
+                <div id="carrusel_description" class="carousel-caption d-none d-md-block">
+                    <h5>Productos con un diseño único y atractivo.</h5>
+                    <p>Para todo dispositivo, desde pc a consolas, solo para ti.</p>
+                </div>
             </div>
         </div>
 
-        <!-- Imagen n°2 -->
-        <div class="carousel-item">
-        <img src="img/carrucel/VENGEANCE_7000_AIR_SERIES_PR_01.png" class="d-block w-100">
-            <div id="carrusel_description" class="carousel-caption d-none d-md-block">
-                <h5>Ideales para acompañar tu estilo de juego.</h5>
-                <p>Rendimiento y estilo en cada partida.</p>
-            </div>
-        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
 
-        <!-- Imagen n°3 -->
-        <div class="carousel-item">
-        <img src="img/carrucel/RED1_Launch_hero1_dt_2000x1125_v2-1200x675.webp" class="d-block w-100">
-        <div id="carrusel_description" class="carousel-caption d-none d-md-block">
-                <h5>Productos con un diseño único y atractivo.</h5>
-                <p>Para todo dispositivo, desde pc a consolas, solo para ti.</p>
-            </div>
-        </div>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
 
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-    </div>
-
-<!-- Productos destacados --> <!-- Vincular productos a carrito o a script--> <!--
+    <!-- Productos destacados --> <!-- Vincular productos a carrito o a script--> <!--
     <div class="container my-5">
         <div class="row g-4">
             
@@ -212,68 +217,73 @@
     </div>
 -->
 
-<!-- Cards -->
-<div id="xd" class="container mt-5">
-    <h2 class="text-center mb-4">Nuestros Productos</h2>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4" id="productosContainer"></div>
-</div>
+    <!-- Cards -->
+    <div id="xd" class="container mt-5">
+        <h2 class="text-center mb-4">Nuestros Productos</h2>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4" id="productosContainer"></div>
+    </div>
 
-<!-- Modal --> <!-- Agregar imagenes a los carruceles de la card -->
-<div class="modal fade" id="detalleModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalNombre">Producto</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-            </div>
-            <div class="modal-body text-center">
-                <div id="carouselExample" class="carousel slide">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img id="modalImg" src="" class="d-block w-100" alt="...">
+    <!-- Modal --> <!-- Agregar imagenes a los carruceles de la card -->
+    <div class="modal fade" id="detalleModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalNombre">Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div id="carouselExample" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img id="modalImg" src="" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img id="modalImg2" src="" class="d-block w-100" alt="...">
+                            </div>
                         </div>
-                        <div class="carousel-item">
-                            <img id="modalImg2" src="" class="d-block w-100" alt="...">
-                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
 
-                <p id="modalDescripcion" class="mb-2"></p>
-                <p id="modalPrecio" class="fw-bold"></p>
-                
-                <label for="modalCantidad" class="form-label">Cantidad:</label>
-                <div class="quantity-container">
-                    <button type="button" class="quantity-btn" id="decreaseBtn">−</button>
-                    <input type="number" id="modalCantidad" min="1" max="99" value="1" readonly>
-                    <button type="button" class="quantity-btn" id="increaseBtn">+</button>
+                    <p id="modalDescripcion" class="mb-2"></p>
+                    <p id="modalPrecio" class="fw-bold"></p>
+
+                    <label for="modalCantidad" class="form-label">Cantidad:</label>
+                    <div class="quantity-container">
+                        <button type="button" class="quantity-btn" id="decreaseBtn">−</button>
+                        <input type="number" id="modalCantidad" min="1" max="99" value="1" readonly>
+                        <button type="button" class="quantity-btn" id="increaseBtn">+</button>
+                    </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-success" id="confirmarAgregar">Agregar al carrito</button>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" id="confirmarAgregar">Agregar al carrito</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Footer Empresa --> 
+    <!-- Footer Empresa -->
     <footer id="empresa" class="bg-light text-dark py-4 mt-5 border-top">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-2 text-center mb-3 mb-md-0">
-                    <img src="img\utilidades\1da7323a-a0f4-4f5c-90a1-5844b22203c5.png" class="img-fluid rounded-circle shadow" alt="Logo Empresa">
+                    <img src="img\utilidades\1da7323a-a0f4-4f5c-90a1-5844b22203c5.png"
+                        class="img-fluid rounded-circle shadow" alt="Logo Empresa">
                 </div>
                 <div class="col-md-8 text-center text-md-start">
                     <h5 class="mb-1">Sobre la Empresa</h5>
-                    <p class="mb-1">Especialistas dedicados a la venta de periféricos para todo tipo de jugador.<br><em>Tu experiencia de juego es nuestra prioridad, incluso aunque juegues en teléfonos.</em></p>
+                    <p class="mb-1">Especialistas dedicados a la venta de periféricos para todo tipo de
+                        jugador.<br><em>Tu experiencia de juego es nuestra prioridad, incluso aunque juegues en
+                            teléfonos.</em></p>
                 </div>
                 <div class="col-md-2 text-center text-md-end">
                     <p class="mb-0"><strong>Contacto:</strong><br> contacto@ExDigital.cl</p>
@@ -281,9 +291,12 @@
             </div>
         </div>
     </footer>
-<!-- zona de scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <!-- zona de scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
     <script src="script/sesionScript.js"></script>
     <script src="script/productosScript.js"></script>
 </body>
+
 </html>

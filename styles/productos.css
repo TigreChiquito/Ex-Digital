@@ -1,0 +1,239 @@
+/* ============================================
+   PRODUCTOS - ESTILOS ESPECÍFICOS
+   Requiere: base.css
+   ============================================ */
+
+/* ============================================
+   TÍTULO DE PRODUCTOS ESPECÍFICO
+   ============================================ */
+
+#xd h2 {
+    text-align: center;
+    margin: auto;
+    margin-bottom: 50px;
+    padding: var(--spacing-xxl) 0;
+    background: white;
+    border-radius: var(--radius-sm);
+    max-width: 500px;
+    box-shadow: var(--shadow-sm);
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de brillo en hover */
+#xd h2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(52, 152, 219, 0.1), transparent);
+    transition: left 0.8s ease;
+}
+
+#xd h2:hover::before {
+    left: 100%;
+}
+
+/* ============================================
+   CONTENEDOR DE PRODUCTOS
+   ============================================ */
+
+#productosContainer .col {
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Las cards ya están definidas en base.css, solo necesitamos animaciones específicas */
+#productosContainer .card {
+    animation: fadeInUp 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+#productosContainer .card:nth-child(1) { animation-delay: 0.1s; }
+#productosContainer .card:nth-child(2) { animation-delay: 0.2s; }
+#productosContainer .card:nth-child(3) { animation-delay: 0.3s; }
+#productosContainer .card:nth-child(4) { animation-delay: 0.4s; }
+#productosContainer .card:nth-child(5) { animation-delay: 0.5s; }
+#productosContainer .card:nth-child(6) { animation-delay: 0.6s; }
+#productosContainer .card:nth-child(7) { animation-delay: 0.7s; }
+#productosContainer .card:nth-child(8) { animation-delay: 0.8s; }
+
+/* ============================================
+   CARRUSEL DEL MODAL ESPECÍFICO
+   ============================================ */
+
+#carouselExample {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    margin-bottom: 25px;
+    max-height: 300px;
+}
+
+#carouselExample .carousel-inner {
+    height: 300px;
+}
+
+#carouselExample .carousel-item {
+    height: 100%;
+}
+
+#carouselExample .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: transform var(--transition-normal);
+    background: var(--gray-100);
+}
+
+#carouselExample .carousel-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Controles del carrusel específicos */
+#carouselExample .carousel-control-prev,
+#carouselExample .carousel-control-next {
+    width: 10%;
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+    background: linear-gradient(45deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1));
+}
+
+#carouselExample:hover .carousel-control-prev,
+#carouselExample:hover .carousel-control-next {
+    opacity: 1;
+}
+
+#carouselExample .carousel-control-prev-icon,
+#carouselExample .carousel-control-next-icon {
+    background-color: rgba(255,255,255,0.9);
+    border-radius: var(--radius-circle);
+    padding: var(--spacing-md);
+}
+
+/* ============================================
+   INFORMACIÓN DEL PRODUCTO EN MODAL
+   ============================================ */
+
+#modalDescripcion {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background: var(--gray-100);
+    border-radius: var(--spacing-sm);
+    border-left: 4px solid var(--primary-color);
+}
+
+#modalPrecio {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 25px;
+    text-align: center;
+    background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%);
+    padding: var(--spacing-md);
+    border-radius: var(--spacing-sm);
+    border: 2px solid var(--success-color);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* ============================================
+   BOTÓN CONFIRMAR AGREGAR ESPECÍFICO
+   ============================================ */
+
+#confirmarAgregar {
+    background: var(--bg-gradient-success);
+    color: white;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+#confirmarAgregar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+    background: linear-gradient(135deg, #20c997 0%, #28a745 100%);
+}
+
+/* ============================================
+   RESPONSIVE ESPECÍFICO
+   ============================================ */
+
+@media (max-width: 768px) {
+    #xd h2 {
+        font-size: 1.6rem;
+        padding: var(--spacing-xl) 0;
+        max-width: 90%;
+    }
+    
+    #productosContainer .col {
+        margin-bottom: 25px;
+    }
+    
+    #carouselExample {
+        max-height: 250px;
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    #carouselExample .carousel-inner {
+        height: 250px;
+    }
+    
+    #modalPrecio {
+        font-size: 1.5rem;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    #xd h2 {
+        font-size: 1.4rem;
+        padding: var(--spacing-lg) 0;
+        max-width: 95%;
+    }
+    
+    #productosContainer .col {
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    #carouselExample {
+        max-height: 200px;
+    }
+    
+    #carouselExample .carousel-inner {
+        height: 200px;
+    }
+    
+    #modalPrecio {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #carouselExample {
+        max-height: 180px;
+    }
+    
+    #carouselExample .carousel-inner {
+        height: 180px;
+    }
+}
+
+/* ============================================
+   ESTADOS DE ACCESIBILIDAD
+   ============================================ */
+
+.card:focus-within {
+    outline: 3px solid rgba(52, 152, 219, 0.3);
+    outline-offset: 2px;
+}
+
+.btn.agregar:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}

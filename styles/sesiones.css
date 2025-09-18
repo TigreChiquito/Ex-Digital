@@ -1,0 +1,175 @@
+/* ============================================
+   SISTEMA DE SESIONES - EXTENSIONES
+   Requiere: base.css
+   ============================================ */
+
+/* Dropdown toggle del usuario - extiende estilos base */
+.navbar-nav .dropdown-toggle {
+    border: 2px solid transparent;
+    border-radius: var(--radius-xl);
+    padding: 8px var(--spacing-md);
+    background: var(--bg-gradient-card);
+    transition: all var(--transition-normal);
+}
+
+.navbar-nav .dropdown-toggle:hover {
+    background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+    border-color: var(--primary-color);
+    color: var(--primary-color) !important;
+}
+
+.navbar-nav .dropdown-toggle.show {
+    background: var(--bg-gradient-primary);
+    color: white !important;
+    border-color: var(--primary-dark);
+}
+
+.user-name {
+    font-weight: 500;
+    color: var(--text-primary);
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.navbar-nav .dropdown-toggle i {
+    color: var(--primary-color);
+    transition: color var(--transition-normal);
+}
+
+.navbar-nav .dropdown-toggle.show i,
+.navbar-nav .dropdown-toggle.show .user-name {
+    color: white !important;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    border: none;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: 0;
+    overflow: hidden;
+    margin-top: var(--spacing-sm);
+    min-width: 250px;
+}
+
+.dropdown-header {
+    background: var(--bg-gradient-button);
+    color: white;
+    font-weight: 600;
+    padding: var(--spacing-md) var(--spacing-lg);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.dropdown-item {
+    padding: 12px var(--spacing-lg);
+    transition: color var(--transition-normal);
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.dropdown-item:hover {
+    background: var(--bg-gradient-card);
+    color: var(--primary-color);
+}
+
+.dropdown-item.text-danger:hover {
+    color: var(--danger-color) !important;
+    background: linear-gradient(135deg, #fee 0%, #fdd 100%);
+}
+
+.dropdown-item-text {
+    padding: 8px var(--spacing-lg);
+    background: var(--gray-100);
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.dropdown-divider {
+    margin: 0;
+    opacity: 0.1;
+}
+
+/* Toast notifications */
+.toast-notification {
+    position: fixed;
+    top: 100px;
+    right: var(--spacing-lg);
+    z-index: 9999;
+    opacity: 0;
+    transform: translateX(400px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.toast-notification.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.toast-content {
+    background: var(--bg-gradient-card);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border-left: 4px solid var(--success-color);
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    color: var(--text-primary);
+    min-width: 250px;
+}
+
+/* Indicador de estado online */
+.navbar-nav .dropdown-toggle::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 8px;
+    height: 8px;
+    background: var(--success-color);
+    border-radius: var(--radius-circle);
+    border: 2px solid white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar-nav .dropdown-toggle {
+        padding: 6px 12px;
+        border-radius: var(--radius-lg);
+    }
+    
+    .user-name {
+        max-width: 100px;
+        font-size: 0.9rem;
+    }
+    
+    .dropdown-menu {
+        min-width: 220px;
+        margin-top: var(--spacing-xs);
+    }
+    
+    .toast-notification {
+        right: var(--spacing-sm);
+        left: var(--spacing-sm);
+        top: 80px;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-nav .dropdown-toggle {
+        padding: 5px var(--spacing-sm);
+        border-radius: var(--spacing-md);
+    }
+    
+    .user-name {
+        max-width: 80px;
+        font-size: 0.85rem;
+    }
+}

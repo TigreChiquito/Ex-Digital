@@ -1,0 +1,248 @@
+/* ============================================
+   BLOG - ESTILOS ESPECÍFICOS
+   Requiere: base.css
+   ============================================ */
+
+/* ============================================
+   HEADER DEL BLOG
+   ============================================ */
+
+.header {
+    margin-bottom: 50px;
+}
+
+#title_blog h1 {
+    font-size: 2.5rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+    font-weight: 600;
+}
+
+/* ============================================
+   CONTENEDORES DE CASOS/ENTRADAS
+   ============================================ */
+
+.case-container {
+    display: flex;
+    margin: var(--spacing-xl) auto;
+    background-color: #e4dddd;
+    min-height: 200px;
+    border-radius: var(--spacing-sm);
+    flex-wrap: wrap;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: transform var(--transition-normal);
+    max-width: 1200px;
+    align-items: stretch;
+}
+
+.case-container:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.case-title {
+    margin: var(--spacing-sm);
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1.3rem;
+    line-height: 1.3;
+}
+
+.case-button {
+    margin: var(--spacing-lg);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--bg-gradient-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    align-self: flex-start;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.case-button:hover {
+    background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+    color: white;
+    text-decoration: none;
+}
+
+.case-content {
+    flex: 1 1 300px;
+    min-width: 300px;
+    padding: var(--spacing-sm);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.case-image {
+    flex: 1;
+    background-color: #fff;
+    border: 2px solid #000;
+    margin: var(--spacing-lg);
+    position: relative;
+    min-height: 160px;
+    display: block;
+    min-width: 250px;
+    min-height: 200px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+.case-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    min-height: 200px;
+    min-width: 250px;
+    transition: transform var(--transition-normal);
+}
+
+.case-image:hover img {
+    transform: scale(1.05);
+}
+
+.case-description {
+    text-align: justify;
+    margin: var(--spacing-sm);
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--text-muted);
+    flex-grow: 1;
+}
+
+/* ============================================
+   RESPONSIVE ESPECÍFICO
+   ============================================ */
+
+@media (max-width: 992px) {
+    .case-container {
+        margin: var(--spacing-lg) var(--spacing-md);
+        flex-direction: column;
+    }
+    
+    .case-content {
+        min-width: auto;
+        flex: none;
+        padding: var(--spacing-md);
+        order: 2;
+    }
+    
+    .case-image {
+        min-width: auto;
+        flex: none;
+        min-height: 200px;
+        margin: var(--spacing-md) var(--spacing-md) 0 var(--spacing-md);
+        order: 1;
+    }
+    
+    .case-image img {
+        min-width: auto;
+        min-height: 200px;
+    }
+    
+    .case-title {
+        font-size: 1.2rem;
+        margin: var(--spacing-sm) var(--spacing-sm) var(--spacing-md) var(--spacing-sm);
+    }
+    
+    .case-description {
+        font-size: 16px;
+        margin: var(--spacing-sm) var(--spacing-sm) var(--spacing-md) var(--spacing-sm);
+    }
+    
+    .case-button {
+        margin: 0 var(--spacing-sm) var(--spacing-md) var(--spacing-sm);
+        align-self: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .case-container {
+        margin: var(--spacing-md);
+        min-height: auto;
+    }
+    
+    .case-content {
+        padding: var(--spacing-md);
+    }
+    
+    .case-image {
+        min-height: 180px;
+        margin: var(--spacing-md) var(--spacing-md) 0 var(--spacing-md);
+    }
+    
+    .case-image img {
+        min-height: 180px;
+    }
+    
+    .case-title {
+        font-size: 1.1rem;
+        margin: var(--spacing-sm);
+    }
+    
+    .case-description {
+        font-size: 16px;
+        text-align: left;
+        margin: var(--spacing-sm);
+    }
+    
+    .case-button {
+        margin: var(--spacing-sm);
+        padding: var(--spacing-sm) var(--spacing-lg);
+        font-size: 0.9rem;
+        align-self: center;
+        width: fit-content;
+    }
+    
+    #title_blog h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .case-container {
+        margin: var(--spacing-sm);
+    }
+    
+    .case-content {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+    
+    .case-image {
+        min-height: 150px;
+        margin: var(--spacing-sm) var(--spacing-sm) 0 var(--spacing-sm);
+    }
+    
+    .case-image img {
+        min-height: 150px;
+    }
+    
+    .case-title {
+        font-size: 1rem;
+    }
+    
+    .case-description {
+        font-size: 14px;
+    }
+    
+    .case-button {
+        width: calc(100% - 2rem);
+        text-align: center;
+        margin: var(--spacing-sm);
+    }
+    
+    #title_blog h1 {
+        font-size: 1.8rem;
+    }
+}
