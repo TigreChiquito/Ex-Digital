@@ -80,43 +80,48 @@
 
 <!-- Modal --> <!-- Agregar imagenes a los carruceles de la card -->
 <div class="modal fade" id="detalleModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modalNombre">Producto</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-      </div>
-      <div class="modal-body text-center">
-        <div id="carouselExample" class="carousel slide">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img id="modalImg" src="" class="d-block w-100" alt="...">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalNombre">Producto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
             </div>
-            <div class="carousel-item">
-              <img id="modalImg2" src="" class="d-block w-100" alt="...">
-            </div>
-          </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
+            <div class="modal-body text-center">
+                <div id="carouselExample" class="carousel slide">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img id="modalImg" src="" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img id="modalImg2" src="" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
 
-        <p id="modalDescripcion" class="mb-2"></p>
-        <p id="modalPrecio" class="fw-bold"></p>
-        <label for="modalCantidad" class="form-label">Cantidad:</label>
-        <input type="number" id="modalCantidad" class="form-control" min="1" value="1">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-success" id="confirmarAgregar">Agregar al carrito</button>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-      </div>
+                <p id="modalDescripcion" class="mb-2"></p>
+                <p id="modalPrecio" class="fw-bold"></p>
+                
+                <label for="modalCantidad" class="form-label">Cantidad:</label>
+                <div class="quantity-container">
+                    <button type="button" class="quantity-btn" id="decreaseBtn">−</button>
+                    <input type="number" id="modalCantidad" min="1" max="99" value="1" readonly>
+                    <button type="button" class="quantity-btn" id="increaseBtn">+</button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" id="confirmarAgregar">Agregar al carrito</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <!-- Footer Empresa -->

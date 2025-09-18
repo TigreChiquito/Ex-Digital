@@ -64,3 +64,58 @@
     modal.hide();
     alert(`${productoSeleccionado.nombre} agregado al carrito`);
     });
+
+    // Funcionalidad para botones de cantidad
+document.getElementById("decreaseBtn").addEventListener("click", () => {
+    const cantidadInput = document.getElementById("modalCantidad");
+    let cantidad = parseInt(cantidadInput.value);
+    if (cantidad > 1) {
+        cantidadInput.value = cantidad - 1;
+        updateQuantityButtons();
+    }
+});
+
+document.getElementById("increaseBtn").addEventListener("click", () => {
+    const cantidadInput = document.getElementById("modalCantidad");
+    let cantidad = parseInt(cantidadInput.value);
+    const maxCantidad = parseInt(cantidadInput.getAttribute("max")) || 99;
+    if (cantidad < maxCantidad) {
+        cantidadInput.value = cantidad + 1;
+        updateQuantityButtons();
+    }
+});
+
+// Función para actualizar el estado de los botones
+function updateQuantityButtons() {
+    const cantidadInput = document.getElementById("modalCantidad");
+    const decreaseBtn = document.getElementById("decreaseBtn");
+    const increaseBtn = document.getElementById("increaseBtn");
+    const cantidad = parseInt(cantidadInput.value);
+    const maxCantidad = parseInt(cantidadInput.getAttribute("max")) || 99;
+    
+    // Deshabilitar botón de disminuir si la cantidad es 1
+    decreaseBtn.disabled = cantidad <= 1;
+    
+    // Deshabilitar botón de aumentar si se alcanza el máximo
+    increaseBtn.disabled = cantidad >= maxCantidad;
+}
+
+// También actualiza tu función existente de manejo del modal
+document.addEventListener("click", (e) => {
+    if(e.target.classList.contains("agregar")){
+        const index = e.target.dataset.index;
+        productoSeleccionado = productos[index];
+
+        document.getElementById("modalNombre").textContent = productoSeleccionado.nombre;
+        document.getElementById("modalImg").src = productoSeleccionado.img;
+        document.getElementById("modalImg2").src = productoSeleccionado.img2 || productoSeleccionado.img;
+        document.getElementById("modalDescripcion").textContent = productoSeleccionado.descripcion;
+        document.getElementById("modalPrecio").textContent = `$${productoSeleccionado.precio.toLocaleString()}`;
+        document.getElementById("modalCantidad").value = 1;
+
+        // Actualizar estado de botones cuando se abre el modal
+        updateQuantityButtons();
+
+        modal.show();
+    }
+});

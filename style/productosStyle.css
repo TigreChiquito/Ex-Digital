@@ -55,3 +55,472 @@ body {
     max-width: 500px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
+
+/* Estilos para el modal mejorado */
+.modal-dialog {
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.modal-content {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    overflow: hidden;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    padding: 20px 30px;
+    border: none;
+    position: relative;
+}
+
+.modal-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(52, 152, 219, 0.1), rgba(155, 89, 182, 0.1));
+    pointer-events: none;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.btn-close {
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    opacity: 0.8;
+    padding: 8px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-close:hover {
+    background: rgba(255,255,255,0.3);
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    padding: 30px;
+    background: white;
+}
+
+/* Estilos para el carrusel del modal */
+#carouselExample {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    margin-bottom: 25px;
+    max-height: 300px;
+}
+
+#carouselExample .carousel-inner {
+    height: 300px;
+}
+
+#carouselExample .carousel-item {
+    height: 100%;
+}
+
+#carouselExample .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+#carouselExample .carousel-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Controles del carrusel del modal */
+#carouselExample .carousel-control-prev,
+#carouselExample .carousel-control-next {
+    width: 10%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: linear-gradient(45deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1));
+}
+
+#carouselExample:hover .carousel-control-prev,
+#carouselExample:hover .carousel-control-next {
+    opacity: 1;
+}
+
+#carouselExample .carousel-control-prev-icon,
+#carouselExample .carousel-control-next-icon {
+    background-color: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    padding: 15px;
+}
+
+
+/* Estilos para el modal mejorado */
+.modal-dialog {
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.modal-content {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    overflow: hidden;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    padding: 20px 30px;
+    border: none;
+    position: relative;
+}
+
+.modal-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(52, 152, 219, 0.1), rgba(155, 89, 182, 0.1));
+    pointer-events: none;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.btn-close {
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    opacity: 0.8;
+    padding: 8px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-close:hover {
+    background: rgba(255,255,255,0.3);
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    padding: 30px;
+    background: white;
+}
+
+/* Estilos para el carrusel del modal */
+#carouselExample {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    margin-bottom: 25px;
+    max-height: 300px;
+}
+
+#carouselExample .carousel-inner {
+    height: 300px;
+}
+
+#carouselExample .carousel-item {
+    height: 100%;
+}
+
+#carouselExample .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: transform 0.3s ease;
+    background: #f8f9fa;
+}
+
+#carouselExample .carousel-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Controles del carrusel del modal */
+#carouselExample .carousel-control-prev,
+#carouselExample .carousel-control-next {
+    width: 10%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: linear-gradient(45deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1));
+}
+
+#carouselExample:hover .carousel-control-prev,
+#carouselExample:hover .carousel-control-next {
+    opacity: 1;
+}
+
+#carouselExample .carousel-control-prev-icon,
+#carouselExample .carousel-control-next-icon {
+    background-color: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    padding: 15px;
+}
+
+/* Información del producto */
+#modalDescripcion {
+    font-size: 1rem;
+    color: #6c757d;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-left: 4px solid #3498db;
+}
+
+#modalPrecio {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    text-align: center;
+    background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%);
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #28a745;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Campo de cantidad mejorado con botones personalizados */
+.quantity-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.quantity-btn {
+    width: 45px;
+    height: 45px;
+    border: 2px solid #3498db;
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+.quantity-btn:hover {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+}
+
+.quantity-btn:active {
+    transform: scale(0.95);
+}
+
+.quantity-btn:disabled {
+    background: #e9ecef;
+    color: #6c757d;
+    border-color: #dee2e6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.quantity-btn:disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+#modalCantidad {
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 12px 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    width: 80px;
+    background: white;
+    color: #2c3e50;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    
+    /* Ocultar las flechas nativas */
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+#modalCantidad::-webkit-outer-spin-button,
+#modalCantidad::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#modalCantidad:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+    outline: none;
+}
+
+/* Footer del modal */
+.modal-footer {
+    padding: 20px 30px;
+    border: none;
+    background: #f8f9fa;
+    gap: 15px;
+    justify-content: center;
+}
+
+.modal-footer .btn {
+    padding: 12px 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    border: none;
+    min-width: 140px;
+}
+
+#confirmarAgregar {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+#confirmarAgregar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+    background: linear-gradient(135deg, #20c997 0%, #28a745 100%);
+}
+
+.modal-footer .btn-secondary {
+    background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(108, 117, 125, 0.3);
+}
+
+.modal-footer .btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(108, 117, 125, 0.4);
+    background: linear-gradient(135deg, #5a6268 0%, #495057 100%);
+}
+
+/* Animaciones de entrada */
+.modal.fade .modal-dialog {
+    transform: scale(0.8) translateY(-50px);
+    transition: all 0.3s ease;
+}
+
+.modal.show .modal-dialog {
+    transform: scale(1) translateY(0);
+}
+
+/* Responsividad para el modal */
+@media (max-width: 768px) {
+    .modal-dialog {
+        margin: 1rem;
+        max-width: calc(100vw - 2rem);
+    }
+    
+    .modal-header,
+    .modal-body,
+    .modal-footer {
+        padding: 20px;
+    }
+    
+    .modal-title {
+        font-size: 1.3rem;
+    }
+    
+    #carouselExample {
+        max-height: 250px;
+        margin-bottom: 20px;
+    }
+    
+    #carouselExample .carousel-inner {
+        height: 250px;
+    }
+    
+    #modalPrecio {
+        font-size: 1.5rem;
+        padding: 12px;
+    }
+    
+    .modal-footer {
+        flex-direction: column;
+    }
+    
+    .modal-footer .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    #carouselExample {
+        max-height: 200px;
+    }
+    
+    #carouselExample .carousel-inner {
+        height: 200px;
+    }
+    
+    .modal-title {
+        font-size: 1.2rem;
+    }
+    
+    #modalPrecio {
+        font-size: 1.3rem;
+    }
+    
+    .modal-header,
+    .modal-body,
+    .modal-footer {
+        padding: 15px;
+    }
+}
