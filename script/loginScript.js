@@ -9,7 +9,14 @@ document.getElementById("login").addEventListener("submit", function(e) {
 
     if (correoIngresado === correoGuardado && contraseñaIngresada === contraseñaGuardada) {
         alert("Inicio de sesión exitoso!");
-        window.location.href = "index.html"; // redirige al home
+        
+        // 🔹 Guardar sesión activa
+        localStorage.setItem("usuarioLogueado", JSON.stringify({
+            correo: correoIngresado
+        }));
+
+        // 🔹 Redirigir al home
+        window.location.href = "index.html"; 
     } else {
         alert("Correo o contraseña incorrectos");
     }

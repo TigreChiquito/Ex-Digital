@@ -22,7 +22,7 @@ function updateNavbar() {
     const navbarAuthSection = document.querySelector('.navbar-nav.ms-auto');
     
     if (usuarioLogueado) {
-        // Usuario logueado - mostrar info del usuario y botón cerrar sesión
+        // Usuario logueado - mostrar solo el botón de cerrar sesión
         navbarAuthSection.innerHTML = `
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -30,12 +30,6 @@ function updateNavbar() {
                     <span class="user-name">${usuarioLogueado.nombre || usuarioLogueado.email}</span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
-                    <li><h6 class="dropdown-header">Bienvenido</h6></li>
-                    <li><span class="dropdown-item-text text-muted small">${usuarioLogueado.email}</span></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i>Mi Perfil</a></li>
-                    <li><a class="dropdown-item" href="#"><i class="bi bi-bag me-2"></i>Mis Pedidos</a></li>
-                    <li><hr class="dropdown-divider"></li>
                     <li><button class="dropdown-item text-danger" id="cerrarSesion"><i class="bi bi-box-arrow-right me-2"></i>Cerrar Sesión</button></li>
                 </ul>
             </li>
@@ -52,6 +46,7 @@ function updateNavbar() {
         `;
     }
 }
+
 
 // Función para cerrar sesión
 function cerrarSesion() {
