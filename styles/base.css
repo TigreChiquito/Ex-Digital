@@ -1,0 +1,761 @@
+/* ============================================
+   ESTILOS BASE COMPARTIDOS
+   ============================================ */
+
+/* Variables CSS para consistencia */
+:root {
+    /* Colores principales */
+    --primary-color: #3498db;
+    --primary-dark: #2980b9;
+    --secondary-color: #2c3e50;
+    --secondary-dark: #34495e;
+    --success-color: #27ae60;
+    --success-light: #2ecc71;
+    --danger-color: #e74c3c;
+    --danger-dark: #c0392b;
+    --warning-color: #f39c12;
+    
+    /* Grises */
+    --gray-100: #f8f9fa;
+    --gray-200: #e9ecef;
+    --gray-300: #dee2e6;
+    --gray-400: #ced4da;
+    --gray-500: #adb5bd;
+    --gray-600: #6c757d;
+    --gray-700: #495057;
+    --gray-800: #343a40;
+    --gray-900: #212529;
+    
+    /* Colores de texto */
+    --text-primary: #2c3e50;
+    --text-secondary: #6c757d;
+    --text-muted: #666;
+    
+    /* Backgrounds */
+    --bg-gradient-main: linear-gradient(135deg, #091b69 0%, #764ba2 100%);
+    --bg-gradient-card: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    --bg-gradient-button: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    --bg-gradient-success: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    --bg-gradient-primary: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    
+    /* Sombras */
+    --shadow-sm: 0 2px 10px rgba(0,0,0,0.1);
+    --shadow-md: 0 8px 25px rgba(0,0,0,0.12);
+    --shadow-lg: 0 15px 35px rgba(0,0,0,0.18);
+    --shadow-hover: 0 8px 20px rgba(44, 62, 80, 0.3);
+    
+    /* Border radius */
+    --radius-sm: 8px;
+    --radius-md: 15px;
+    --radius-lg: 20px;
+    --radius-xl: 25px;
+    --radius-circle: 50%;
+    
+    /* Transiciones */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.4s ease;
+    
+    /* Espaciado */
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 15px;
+    --spacing-lg: 20px;
+    --spacing-xl: 30px;
+    --spacing-xxl: 40px;
+}
+
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: var(--bg-gradient-main);
+    min-height: 100vh;
+}
+
+/* ============================================
+   NAVBAR COMPARTIDO
+   ============================================ */
+
+.navbar {
+    background: white !important;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--spacing-xl);
+}
+
+.navbar-brand img {
+    border-radius: var(--radius-circle);
+    transition: transform var(--transition-normal);
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.05);
+}
+
+.nav-link {
+    color: var(--secondary-color) !important;
+    font-weight: 500;
+    transition: color var(--transition-normal);
+    position: relative;
+    padding: 8px var(--spacing-md) !important;
+    border-radius: var(--radius-lg);
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+    background: rgba(52, 152, 219, 0.1);
+}
+
+.nav-link.active {
+    color: var(--primary-color) !important;
+    background: var(--bg-gradient-primary);
+    color: white !important;
+}
+
+/* Contador del carrito */
+#cart-counter {
+    font-size: 0.7rem;
+    min-width: 18px;
+    height: 18px;
+    line-height: 18px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cart-counter[data-count="0"] {
+    display: none;
+}
+
+/* ============================================
+   CARDS COMPARTIDAS
+   ============================================ */
+
+.card {
+    border: none;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    background: var(--bg-gradient-card);
+    transition: all var(--transition-slow);
+    position: relative;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Efecto decorativo superior */
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--bg-gradient-primary);
+    transform: scaleX(0);
+    transition: transform var(--transition-normal);
+}
+
+.card:hover::before {
+    transform: scaleX(1);
+}
+
+.card-img-top {
+    height: 220px;
+    object-fit: contain;
+    object-position: center;
+    padding: var(--spacing-md);
+    background: #ffffff;
+    transition: transform var(--transition-normal);
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 25px var(--spacing-lg);
+    background: white;
+    position: relative;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    line-height: 1.3;
+    min-height: 2.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.card-text {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--success-color);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+    background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--spacing-sm);
+    border: 2px solid rgba(39, 174, 96, 0.2);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* ============================================
+   BOTONES COMPARTIDOS
+   ============================================ */
+
+.btn {
+    font-weight: 600;
+    border-radius: var(--radius-xl);
+    transition: all var(--transition-normal);
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn-primary, .btn.agregar {
+    background: var(--bg-gradient-button);
+    color: white;
+    padding: 12px 25px;
+}
+
+.btn-primary:hover, .btn.agregar:hover {
+    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-success {
+    background: var(--bg-gradient-success);
+    color: white;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+.btn-success:hover {
+    background: linear-gradient(135deg, #20c997 0%, #28a745 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+}
+
+.btn-danger, .btn.eliminar {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: white;
+}
+
+.btn-danger:hover, .btn.eliminar:hover {
+    background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(108, 117, 125, 0.3);
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #5a6268 0%, #495057 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(108, 117, 125, 0.4);
+}
+
+/* ============================================
+   MODALES COMPARTIDOS
+   ============================================ */
+
+.modal-dialog {
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.modal-content {
+    border: none;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    overflow: hidden;
+    background: var(--bg-gradient-card);
+}
+
+.modal-header {
+    background: var(--bg-gradient-button);
+    color: white;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    border: none;
+    position: relative;
+}
+
+.modal-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(52, 152, 219, 0.1), rgba(155, 89, 182, 0.1));
+    pointer-events: none;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.btn-close {
+    background: rgba(255,255,255,0.2);
+    border-radius: var(--radius-circle);
+    opacity: 0.8;
+    padding: 8px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-normal);
+    position: relative;
+    z-index: 1;
+}
+
+.btn-close:hover {
+    background: rgba(255,255,255,0.3);
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    padding: var(--spacing-xl);
+    background: white;
+}
+
+.modal-footer {
+    padding: var(--spacing-lg) var(--spacing-xl);
+    border: none;
+    background: var(--gray-100);
+    gap: var(--spacing-md);
+    justify-content: center;
+}
+
+/* ============================================
+   CONTROLES DE CANTIDAD COMPARTIDOS
+   ============================================ */
+
+.quantity-container, .quantity-container-cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+}
+
+.quantity-btn, .quantity-btn-cart {
+    width: 45px;
+    height: 45px;
+    border: 2px solid var(--primary-color);
+    background: var(--bg-gradient-primary);
+    color: white;
+    border-radius: var(--radius-circle);
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    outline: none;
+}
+
+.quantity-btn-cart {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+}
+
+.quantity-btn:hover, .quantity-btn-cart:hover {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+}
+
+.quantity-btn:active, .quantity-btn-cart:active {
+    transform: scale(0.95);
+}
+
+.quantity-btn:disabled, .quantity-btn-cart:disabled {
+    background: var(--gray-200);
+    color: var(--gray-600);
+    border-color: var(--gray-300);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.quantity-btn:disabled:hover, .quantity-btn-cart:disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Inputs de cantidad */
+.cantidad-input, #modalCantidad {
+    border: 2px solid var(--gray-200);
+    border-radius: 12px;
+    padding: 12px var(--spacing-md);
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    width: 80px;
+    background: white;
+    color: var(--text-primary);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all var(--transition-normal);
+    
+    /* Ocultar flechas nativas */
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.cantidad-input::-webkit-outer-spin-button,
+.cantidad-input::-webkit-inner-spin-button,
+#modalCantidad::-webkit-outer-spin-button,
+#modalCantidad::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.cantidad-input:focus, #modalCantidad:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+    outline: none;
+}
+
+/* ============================================
+   CONTENEDORES Y LAYOUT COMPARTIDOS
+   ============================================ */
+
+.container-custom {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing-xxl) var(--spacing-lg);
+    background: white;
+    margin-bottom: var(--spacing-xl);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+}
+
+.header-section {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: var(--spacing-xxl) 0;
+    background: white;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+}
+
+.header-section h1, .header-section h2 {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.section-content {
+    background: white;
+    padding: var(--spacing-xxl);
+    margin-bottom: var(--spacing-xl);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+}
+
+.section-content h2 {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-lg);
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: var(--spacing-sm);
+}
+
+.section-content p {
+    margin-bottom: var(--spacing-md);
+    color: var(--text-muted);
+    text-align: justify;
+}
+
+/* ============================================
+   FORMULARIOS COMPARTIDOS
+   ============================================ */
+
+.form-control {
+    border: 1px solid #8d8787;
+    border-radius: 4px;
+    padding: var(--spacing-sm);
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: var(--spacing-md);
+    transition: border-color var(--transition-normal);
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.25);
+    outline: none;
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+/* ============================================
+   FOOTER COMPARTIDO
+   ============================================ */
+
+#empresa {
+    background: var(--gray-100) !important;
+    border-top: 1px solid var(--gray-300);
+}
+
+#empresa img {
+    transition: transform var(--transition-normal);
+}
+
+#empresa img:hover {
+    transform: scale(1.05);
+}
+
+/* ============================================
+   ANIMACIONES COMPARTIDAS
+   ============================================ */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+.fade-in-animation {
+    animation: fadeInUp 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+.fade-in-scale {
+    animation: fadeInScale 0.6s ease-out;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN COMPARTIDO
+   ============================================ */
+
+@media (max-width: 1200px) {
+    .card-img-top {
+        height: 200px;
+        padding: 12px;
+    }
+    
+    .card-body {
+        padding: var(--spacing-lg) 18px;
+    }
+    
+    .card-title {
+        font-size: 1rem;
+        min-height: 2.4rem;
+    }
+    
+    .card-text {
+        font-size: 1.2rem;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container-custom {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+    
+    .section-content {
+        padding: 25px;
+    }
+    
+    .header-section h1, .header-section h2 {
+        font-size: 2rem;
+    }
+    
+    .card-img-top {
+        height: 180px;
+        padding: var(--spacing-sm);
+    }
+    
+    .card-body {
+        padding: 18px var(--spacing-md);
+    }
+    
+    .card-title {
+        font-size: 0.95rem;
+        min-height: 2.2rem;
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .card-text {
+        font-size: 1.1rem;
+        padding: 8px var(--spacing-sm);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .quantity-btn-cart {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+    
+    .cantidad-input {
+        max-width: 60px;
+        padding: 6px 4px;
+        font-size: 0.9rem;
+    }
+    
+    .modal-dialog {
+        margin: 1rem;
+        max-width: calc(100vw - 2rem);
+    }
+    
+    .modal-header,
+    .modal-body,
+    .modal-footer {
+        padding: var(--spacing-lg);
+    }
+    
+    .modal-footer {
+        flex-direction: column;
+    }
+    
+    .modal-footer .btn {
+        width: 100%;
+        margin-bottom: var(--spacing-sm);
+    }
+}
+
+@media (max-width: 576px) {
+    .card-img-top {
+        height: 160px;
+        padding: 8px;
+    }
+    
+    .card-body {
+        padding: var(--spacing-md) 12px;
+    }
+    
+    .card-title {
+        font-size: 0.9rem;
+        min-height: 2rem;
+        margin-bottom: 8px;
+    }
+    
+    .card-text {
+        font-size: 1rem;
+        padding: 6px 8px;
+        margin-bottom: 12px;
+    }
+    
+    .quantity-btn-cart {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+    
+    .cantidad-input {
+        max-width: 50px;
+        padding: 5px 3px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .card {
+        border-radius: var(--radius-md);
+    }
+    
+    .card-img-top {
+        height: 140px;
+        padding: 6px;
+    }
+    
+    .card-body {
+        padding: 12px var(--spacing-sm);
+    }
+    
+    .card-title {
+        font-size: 0.85rem;
+        min-height: 1.8rem;
+        margin-bottom: 6px;
+    }
+    
+    .card-text {
+        font-size: 0.95rem;
+        padding: 5px 6px;
+        margin-bottom: var(--spacing-sm);
+    }
+}
