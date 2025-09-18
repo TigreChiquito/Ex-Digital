@@ -1,13 +1,13 @@
     // Cambiar orden de productos para que quede estetico y agregar imagenes 2 y 3
     const productos = [
-    {nombre: "Cascos", precio: 10000, img: "img/productos/CA-9011379-WW_01.avif", img2: "img/productos/g213-gallery-1-nb.webp",descripcion: "Descripción detallada del Producto 1."},
-    {nombre: "Teclado", precio: 15000, img: "img/productos/g213-gallery-1-nb.webp", descripcion: "Descripción detallada del Producto 2."},
-    {nombre: "Teclado", precio: 12500, img: "img/productos/g513-carbon-gallery-2.webp", descripcion: "Descripción detallada del Producto 3."},
-    {nombre: "Teclado", precio: 18000, img: "img/productos/g915-x-wireless-mechanical-gaming-keyboard-gallery-1-us.webp", descripcion: "Descripción detallada del Producto 4."},
-    {nombre: "Teclado", precio: 9500, img: "img/productos/K65_PLUS_WIRELESS_01.avif", descripcion: "Descripción detallada del Producto 5."},
-    {nombre: "Mouse", precio: 20000, img: "img/productos/M75_AIR_LIGHT_GRAY_01.avif", descripcion: "Descripción detallada del Producto 6."},
-    {nombre: "Teclado", precio: 14000, img: "img/productos/makr75-front.avif", descripcion: "Descripción detallada del Producto 7."},
-    {nombre: "Cascos", precio: 11500, img: "img/productos/VIRTUOSO_MAX_WIRELESS_CRBN_01.avif", descripcion: "Descripción detallada del Producto 8."}
+    {nombre: "CA-9011379", precio: 10000, img: "img/productos/CA-9011379-WW_01.avif", img2: "img/productos/g213-gallery-1-nb.webp",descripcion: "Auriculares gaming de alta calidad con micrófono integrado y sonido envolvente. Perfectos para largas sesiones de juego.."},
+    {nombre: "G213", precio: 15000, img: "img/productos/g213-gallery-1-nb.webp", descripcion: "Teclado gamer retroiluminado con teclas resistentes y rápidas. Ideal para mejorar tu rendimiento en cada partida."},
+    {nombre: "G513", precio: 12500, img: "img/productos/g513-carbon-gallery-2.webp", descripcion: "Teclado mecánico premium con switches de alta precisión y reposamuñecas ergonómico. Rendimiento y comodidad en uno."},
+    {nombre: "G915", precio: 18000, img: "img/productos/g915-x-wireless-mechanical-gaming-keyboard-gallery-1-us.webp", descripcion: "Teclado inalámbrico de perfil bajo con iluminación RGB y batería de larga duración. Estilo y rendimiento profesional."},
+    {nombre: "K65", precio: 9500, img: "img/productos/K65_PLUS_WIRELESS_01.avif", descripcion: "Teclado compacto mecánico con retroiluminación brillante. Portátil y perfecto para gamers que necesitan movilidad."},
+    {nombre: "M75", precio: 20000, img: "img/productos/M75_AIR_LIGHT_GRAY_01.avif", descripcion: "Mouse gamer de última generación con sensor de alta precisión y diseño ergonómico. Control absoluto en cada movimiento."},
+    {nombre: "MAKR75", precio: 14000, img: "img/productos/makr75-front.avif", descripcion: "Teclado mecánico personalizable con diseño compacto. Ideal para quienes buscan estilo, comodidad y velocidad."},
+    {nombre: "VIRTUOSO_MAX", precio: 11500, img: "img/productos/VIRTUOSO_MAX_WIRELESS_CRBN_01.avif", descripcion: "Auriculares inalámbricos premium con sonido de alta fidelidad y micrófono desmontable. Experiencia inmersiva total."}
     ];
 
     const container = document.getElementById("productosContainer");
