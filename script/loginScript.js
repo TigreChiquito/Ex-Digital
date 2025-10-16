@@ -16,7 +16,7 @@ document.getElementById("login").addEventListener("submit", function(e) {
         }));
 
         // 🔹 Redirigir al home
-        window.location.href = "index.html"; 
+        window.location.href = "../index.html"; 
     } else {
         alert("Correo o contraseña incorrectos");
     }
