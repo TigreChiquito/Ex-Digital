@@ -1,5 +1,7 @@
-    // Detectar si estamos en la raíz o en pages/
-    const imgPath = window.location.pathname.includes('/pages/') ? '../img/productos/' : 'img/productos/';
+    // Detectar si estamos en index.html (raíz) o en pages/
+    const currentPage = window.location.pathname.split('/').pop();
+    const isIndexPage = currentPage === 'index.html' || currentPage === '' || currentPage === 'Ex-Digital' || currentPage.endsWith('Ex-Digital/');
+    const imgPath = isIndexPage ? 'img/productos/' : '../img/productos/';
     
     // Cambiar orden de productos para que quede estetico y agregar imagenes 2 y 3
     const productos = [
