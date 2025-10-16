@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-## C:/ProgramData/Anaconda3/Scripts/conda.exe run -p C:\ProgramData\Anaconda3 --no-capture-output python test_selenium.py
+## cd tests; C:/ProgramData/Anaconda3/Scripts/conda.exe run -p C:\ProgramData\Anaconda3 --no-capture-output python test_selenium.py
 
 def register_user(driver, email, password, name="Usuario Test", phone="123456789"):
     """Registra un usuario en el sistema antes de hacer login"""
@@ -20,6 +20,8 @@ def register_user(driver, email, password, name="Usuario Test", phone="123456789
         EC.presence_of_element_located((By.ID, "nombre"))
     )
     
+    time.sleep(1)  # Extra wait for scripts to load
+    
     # Fill registration form
     driver.find_element(By.ID, "nombre").send_keys(name)
     driver.find_element(By.ID, "correo").send_keys(email)
@@ -30,7 +32,7 @@ def register_user(driver, email, password, name="Usuario Test", phone="123456789
     # Submit form
     driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
     
-    time.sleep(2)
+    time.sleep(1)
     
     try:
         # Handle alert
@@ -39,10 +41,10 @@ def register_user(driver, email, password, name="Usuario Test", phone="123456789
         alert_text = alert.text
         print(f"Registration alert: {alert_text}")
         alert.accept()
-    except:
-        pass
+    except Exception as e:
+        print(f"No alert found: {e}")
     
-    time.sleep(1)
+    time.sleep(2)  # Give time for localStorage to be saved
     print("Usuario registrado exitosamente")
 
 def test_login(driver, email, password):
@@ -50,14 +52,18 @@ def test_login(driver, email, password):
     WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.ID, "correo"))
     )
+    
+    time.sleep(1)  # Extra wait for scripts to load
 
     element1 = driver.find_element(By.ID, "correo")
     print(f"Correo field found")
+    element1.clear()
     element1.click()
     element1.send_keys(email)
 
     element2 = driver.find_element(By.ID, "contraseña")
     print(f"Contraseña field found")
+    element2.clear()
     element2.click()
     element2.send_keys(password)
 
@@ -67,17 +73,17 @@ def test_login(driver, email, password):
     print(f"Submit button text: {element3.text}")
     element3.click()
 
-    time.sleep(2)  # Wait for alert to appear
+    time.sleep(3)  # Wait longer for alert to appear
 
     try:
         # Wait for alert and handle it
-        WebDriverWait(driver, 5).until(EC.alert_is_present())
+        WebDriverWait(driver, 10).until(EC.alert_is_present())
         alert = driver.switch_to.alert
         alert_text = alert.text
         print(f"Alert message: {alert_text}")
         alert.accept()
         
-        time.sleep(1)  # Wait for redirect
+        time.sleep(2)  # Wait for redirect
         
         print("Current URL after login:")
         print(driver.current_url)
@@ -91,7 +97,7 @@ def test_login(driver, email, password):
         print(f"Error handling alert: {e}")
         print(f"Current URL: {driver.current_url}")
 
-    time.sleep(2)  # Pause to see the result
+    time.sleep(1)  # Pause to see the result
 
 
 
